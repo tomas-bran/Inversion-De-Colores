@@ -4,8 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class InversionColores {
-    public static void main(String[] args) throws IOException {
-        String fileName = "balloons.ascii.pgm"; // Cambiá por el nombre que quieras usar
+    public static void invertirColores(String fileName) throws IOException{
         InputStream inputStream = InversionColores.class.getResourceAsStream(fileName);
 
         if (inputStream == null) {
@@ -118,5 +117,9 @@ public class InversionColores {
         } catch (IOException e) {
             System.err.println("Error al guardar la imagen: " + e.getMessage());
         }
+	}	
+	
+    public static void main(String[] args){
+
     }
 }
