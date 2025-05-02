@@ -24,8 +24,9 @@ public class InversionColores {
 
         int picWidth = scan.nextInt();
         int picHeight = scan.nextInt();
-        int maxValue = scan.nextInt();
+        headerLinesToSkip++;
 
+        int maxValue = scan.nextInt();
         headerLinesToSkip++;
 
         scan.close();
