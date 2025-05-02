@@ -16,10 +16,10 @@ public class InversionColores {
         String formatPGM = scan.nextLine().trim(); // P2 o P5
         int headerLinesToSkip = 1;
 
-        // Saltar comentarios
- 
+        // Saltar comentarios 
         while (scan.hasNext("#")) {
             scan.nextLine();
+            headerLinesToSkip++;
         }
 
         int picWidth = scan.nextInt();
