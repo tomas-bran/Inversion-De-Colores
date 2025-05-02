@@ -29,29 +29,18 @@ public class InversionColores {
         int maxValue = scan.nextInt();
         headerLinesToSkip++;
 
-        scan.close();
         inputStream.close();
-
         int[][] data2D = new int[picHeight][picWidth];
 
-        if (formatPGM.equals("P2")) {
-            // Leer como texto
-            inputStream = InversionColores.class.getResourceAsStream(fileName);
-            scan = new Scanner(inputStream);
-
-            // Saltar encabezado
-            for (int i = 0; i < headerLinesToSkip; i++) {
-                scan.nextLine();
-            }
-
+        if (formatPGM.equals("P2")) {           
             for (int row = 0; row < picHeight; row++) {
                 for (int col = 0; col < picWidth; col++) {
                     data2D[row][col] = scan.nextInt();
                 }
             }
-
-            scan.close();
+            scan.close();            
         } else if (formatPGM.equals("P5")) {
+            scan.close();
             // Leer como binario
             inputStream = InversionColores.class.getResourceAsStream(fileName);
             DataInputStream dis = new DataInputStream(inputStream);
@@ -119,7 +108,7 @@ public class InversionColores {
 	
     public static void main(String[] args){
     	try {
-    		invertirColores("feep.ascii.pgm");
+    		invertirColores("adorni-y-yo.pgm");
     	}catch(IOException e)
     	{
     		System.out.println(e.getMessage());
