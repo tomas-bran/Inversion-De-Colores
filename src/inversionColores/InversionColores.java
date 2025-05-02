@@ -17,18 +17,15 @@ public class InversionColores {
         int headerLinesToSkip = 1;
 
         // Saltar comentarios
-        String line;
-        do {
-            line = scan.nextLine().trim();
-            headerLinesToSkip++;
-        } while (line.startsWith("#"));
+ 
+        while (scan.hasNext("#")) {
+            scan.nextLine();
+        }
 
-        Scanner dimensionScanner = new Scanner(line);
-        int picWidth = dimensionScanner.nextInt();
-        int picHeight = dimensionScanner.nextInt();
-        dimensionScanner.close();
-
+        int picWidth = scan.nextInt();
+        int picHeight = scan.nextInt();
         int maxValue = scan.nextInt();
+
         headerLinesToSkip++;
 
         scan.close();
