@@ -85,7 +85,7 @@ public class InversionColores {
         }
 
         // Guardar imagen invertida
-        String outputFilePath = "invertida.pgm";
+        String outputFilePath = fileName+"_invertida.pgm";
         File outputFile = new File(outputFilePath);
         System.out.println("Guardando en: " + outputFile.getAbsolutePath());
 
@@ -117,6 +117,11 @@ public class InversionColores {
 	}	
 	
     public static void main(String[] args){
-
+    	try {
+    		invertirColores("feep.ascii.pgm");
+    	}catch(IOException e)
+    	{
+    		System.out.println(e.getMessage());
+    	}       	
     }
 }
